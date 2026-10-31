@@ -336,6 +336,7 @@ class ServerSupervisor:
             log_level="debug",
             log_config=uvicorn_log_config(console=self._console_logging),
             timeout_graceful_shutdown=SERVER_GRACEFUL_SHUTDOWN_SECONDS,
+            proxy_headers=False,
         )
 
         def on_started() -> None:

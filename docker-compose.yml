@@ -1,0 +1,13 @@
+services:
+  fcc:
+    build: .
+    image: fcc:latest
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      PORT: "8083"
+    volumes:
+      - fcc_data:/root/.fcc
+
+volumes:
+  fcc_data:
